@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Notes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <header class="bg-dark-mode p-3 text-center">
+        <a href="/" title="Berke Kocadere" class="h1">BOOK NOTES</a>
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <section id="pages" class="mb-5">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <!-- Toggler button for mobile view -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Navbar Links -->
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item px-3">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item px-3">
+                                    <a class="nav-link" href="/about">About Me</a>
+                                </li>
+                                <% if (!isAdmin) { %>
+                                    <li class="nav-item px-3">
+                                        <a class="nav-link" href="/contact">Contact</a>
+                                    </li>
+                                    <li class="nav-item px-3">
+                                        <a class="nav-link" href="/login">Login</a>
+                                    </li>
+                                <% } else { %>
+                                    <li class="nav-item px-3">
+                                        <a class="nav-link" href="/logout">Logout</a>
+                                    </li>
+                                <% } %>                                
+                                <li class="nav-item px-3">
+                                    <a class="nav-link" href="/entries">Entries</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </section>

@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") %>
+
+<section id="contact" class="mb-5">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h2 class="text-center mb-4">Contact</h2>
+                <% if (typeof msg !== 'undefined') { %>
+                    <div class="alert alert-info"><%= msg %></div>
+                <% } %>
+                <form action="/contact" method="POST">
+                    <div class="form-group mb-3">
+                        <label for="inputEmail">Email address</label>
+                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="contactEmail" required>
+                        <small id="emailHelp" class="form-text text-muted">Your email won't be shared with anyone else.</small>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="validationTextarea">Message</label>
+                        <textarea class="form-control" id="validationTextarea" name="message" placeholder="Please enter your message" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a message in the textarea.
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

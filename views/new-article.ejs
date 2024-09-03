@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+<section id="contact" class="mb-5">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h2 class="text-center mb-4">Add a new article</h2>
+                <% if (typeof msg !== 'undefined') { %>
+                    <div class="alert alert-info"><%= msg %></div>
+                <% } %>
+                <form action="/add-article" method="POST">
+                    <div class="form-group mb-3">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" aria-describedby="title" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="rating">Rating</label>
+                        <input type="number" class="form-control" id="rating" name="rating" 
+                               min="0.0" max="5.0" step="0.1" aria-describedby="rating" required>
+                        <small id="ratingHelp" class="form-text text-muted">Enter a rating between 0.0 and 5.0, with one decimal place.</small>
+                    </div>                    
+                    <div class="form-group mb-4">
+                        <label for="article">Review</label>
+                        <textarea class="form-control" id="article" name="article" placeholder="Write your review here." required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a review.
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

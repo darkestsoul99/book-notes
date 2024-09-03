@@ -1,0 +1,67 @@
+<%- include("partials/header.ejs") %>
+
+    <!-- Newest Entries Section -->
+    <section id="newestentries" class="mb-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">NEWEST ENTRIES</h2>
+                <p class="text-center">See newest entries about books I've read.</p>
+            </div>
+        </div>
+        <div class="row">
+            <% if (newestentries.length > 0) { %>
+                <% for(let entry of newestentries){ %>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title entryTitle" id="<%= entry.title %>">
+                                    <a href="/entries/<%= entry.id %>"><%= entry.title %></a>
+                                </h3>
+                                <p class="card-text entryArticle"><%= entry.article %>...</p>
+                                <p><a href="/entries/<%= entry.id %>">[ Read More ]</a></p>
+                                <p class="card-text">
+                                    <small class="text-muted">Rating: <%= entry.rating %> | Date: <%= entry.date_created %></small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <p class="text-center">No entries found.</p>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Popular Entries Section -->
+    <section id="popularentries" class="mb-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">POPULAR ENTRIES</h2>
+                <p class="text-center">See the most popular entries written by me.</p>
+            </div>
+        </div>
+        <div class="row">
+            <% if (popularentries.length > 0) { %>
+                <% for(let entry of popularentries){ %>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title entryTitle" id="<%= entry.title %>">
+                                    <a href="/entries/<%= entry.id %>"><%= entry.title %></a>
+                                </h3>
+                                <p class="card-text entryArticle"><%= entry.article %>...</p>
+                                <p><a href="/entries/<%= entry.id %>">[ Read More ]</a></p>
+                                <p class="card-text">
+                                    <small class="text-muted">Rating: <%= entry.rating %> | Date: <%= entry.date_created %></small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <p class="text-center">No entries found.</p>
+            <% } %>
+        </div>
+    </section>
+
+<%- include("partials/footer.ejs") %>

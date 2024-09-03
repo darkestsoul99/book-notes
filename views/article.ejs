@@ -1,0 +1,44 @@
+<%- include("partials/header.ejs") %>
+
+<section id="article" class="mb-5">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h2 class="text-center mb-4">Entry Details</h2>
+                <% if (entry) { %>
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Book Cover Section -->
+                            <% if (book_cover) { %>
+                                <div class="text-center mb-4">
+                                    <img src="<%= book_cover %>" alt="<%= entry.title %> Cover" class="img-fluid" style="max-width: 300px;">
+                                </div>
+                            
+                            <!-- Book Details Section -->
+                            <% if (book_info.author) { %>
+                                <p class="text-center book-info"><strong>Author:</strong> <%= book_info.author %></p>
+                            <% } %>
+                            <% if (book_info.book_year) { %>
+                                <p class="text-center book-info"><strong>Release Year:</strong> <%= book_info.book_year %></p>
+                            <% } %>
+                            <% } %>
+
+                            <h3 class="card-title text-center"><%= entry.title %></h3>
+                            <p class="card-text mt-3"><%= entry.article %></p>
+                            <p class="text-center mt-3">
+                                <small class="text-muted">Rating: <%= entry.rating %> | Date: <%= entry.date_created %></small>
+                            </p>
+                            <p class="text-center mt-3">
+                                <a href="/entries" class="btn btn-secondary">Back to Entries</a>
+                            </p>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <p class="text-center">Entry not found.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

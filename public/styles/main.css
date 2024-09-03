@@ -1,0 +1,57 @@
+body {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+a {
+    color: #72a8da;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #21617a;
+}
+
+header, footer {
+    background-color: #1F1B24;
+    color: #E0E0E0;
+}
+
+.card {
+    background-color: #2C2C2C;
+    border: none;
+}
+
+.card-title {
+    color: #72a8da;
+}
+
+.card-text {
+    color: #E0E0E0;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+.card-hover {
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.card-hover:hover {
+    background-color: #007bff; /* Change this color to fit your design */
+    color: #ffffff; /* Text color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-muted {
+    color: #9E9E9E !important;
+}
+
+.bg-dark-mode {
+    background-color: #121212 !important;
+}
+
+.book-info {
+    color: #72a8da;
+}
